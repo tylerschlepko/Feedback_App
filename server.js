@@ -4,21 +4,24 @@ const dotenv = require('dotenv')
 const cors = require('cors')
 
 dotenv.config()
+
 const app = express()
 app.use(cors())
 app.use(express.json())
+
 const PORT = 5001
 const DATABASE_URL = process.env.DATABASE_URL
 
 const sql = postgres(DATABASE_URL)
 
 
-//Get all from database
+//Get all from database in id decending order
 app.get('/feedback', async(req, res)=>{
     
     try {
         const data = await sql`
         SELECT * FROM feedback
+        ORDER BY id DESC
         `
         res.status(200).json(data)
         
@@ -32,12 +35,15 @@ app.get('/feedback', async(req, res)=>{
 app.post('/feedback', async (req, res)=>{
     const {rating, text} = req.body
     try {
-        await sql`
+        const data = await sql`
         INSERT INTO feedback (rating, text)
         VALUES (${rating}, ${text})
+
+
+        returning *
         `
 
-        res.status(201)
+        res.status(201).json(data)
     } catch (error) {
         console.log(error);
     }

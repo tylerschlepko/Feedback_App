@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS feedback;
+
+CREATE TABLE feedback (
+    id SERIAL PRIMARY KEY NOT NULL,
+    rating INT NOT NULL,
+    text VARCHAR NOT NULL
+);

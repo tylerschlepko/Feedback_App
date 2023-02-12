@@ -20,8 +20,8 @@ function App() {
                     <Routes>
                     <Route exact path='/' element={
                         <>
-                            <FeedbackForm />
-                            <FeedbackStats />
+                            <FeedbackForm/>
+                            <FeedbackStats/>
                             <FeedBackList/>
                             <AboutIconLink/>
                         </>

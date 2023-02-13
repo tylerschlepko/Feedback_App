@@ -54,12 +54,12 @@ app.put('/feedback/:id', async (req,res) =>{
     const id = req.params.id
     const {rating, text} = req.body
     try {
-        sql`
+        const data = await sql`
         UPDATE feedback 
         SET text = ${text}, rating = ${rating}
         WHERE id = ${id}
         `
-        res.status(200)
+        res.status(200).json(data)
     } catch (error) {
         console.log(error);
     }

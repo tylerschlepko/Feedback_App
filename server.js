@@ -2,18 +2,23 @@ const express = require('express')
 const postgres = require('postgres')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const path = require('path')
 
 dotenv.config()
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.static(path.resolve(__dirname, 'build')))
 
-const PORT = 5001
+const PORT = process.env.PORT
 const DATABASE_URL = process.env.DATABASE_URL
 
 const sql = postgres(DATABASE_URL)
 
+app.get('/', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 //Get all from database in id decending order
 app.get('/feedback', async(req, res)=>{

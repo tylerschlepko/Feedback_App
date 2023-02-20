@@ -81,7 +81,7 @@ export const FeedbackProvider = ({children}) => {
             body: JSON.stringify(updItem)
         })
 
-        setFeedback(feedback.map((item) => (item.id === id ? {...item, ...updItem} : item)))
+        fetchFeedback()
     }
 
     return <FeedbackContext.Provider value={{

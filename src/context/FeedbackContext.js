@@ -58,8 +58,9 @@ export const FeedbackProvider = ({children}) => {
             },
             body: JSON.stringify(newFeedback)
         })
-
+        fetchFeedback()
         await setFeedback([newFeedback,...feedback])
+
     }
 
     //Set item to be updated

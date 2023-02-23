@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'build')))
 
-const PORT = process.env.PORT
+const PORT = 5001 || process.env.PORT
 const DATABASE_URL = process.env.DATABASE_URL
 
 const sql = postgres(DATABASE_URL)

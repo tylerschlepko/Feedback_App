@@ -1,3 +1,9 @@
+# Feedback Application
+
+The Feedback Application is a full stack web application developed by Tyler Schlepko. It utilizes React for the front-end, Express.js and Node.js for the back-end, and Postgresql for the database. The application enables users to post reviews and rate them from 1-10 by utilizing RESTful APIs and integrating with external APIs. The application provides a seamless user experience through the use of React-Router and is designed with an optimized database schema that implements queries using Postgres.sql. The application is deployed on Render, and Git is used for version control and collaboration.
+
+[![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?borderRadius=0&lineCount=3&theme=github_dark&line1=react,react,1adaf6;javascript,javascript,ffd443;css3,css3,2e7dcc;html5,html5,f57600;&line2=Node.js,node.js,9aec3e;express,express,000000;postgresql,postgresql,2b6ec5;&line3=git,git,c58907;npm,npm,000000;render,render,e2864c;)](https://github-readme-tech-stack.vercel.app/api/cards?borderRadius=0&lineCount=3&theme=github_dark&line1=react,react,1adaf6;javascript,javascript,ffd443;css3,css3,2e7dcc;html5,html5,f57600;&line2=Node.js,node.js,9aec3e;express,express,000000;postgresql,postgresql,2b6ec5;&line3=git,git,c58907;npm,npm,000000;render,render,e2864c;)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
